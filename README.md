@@ -1,52 +1,65 @@
 # Chatbot Deployment with Flask and JavaScript
 
-In this tutorial we deploy the chatbot I created in [this](https://github.com/python-engineer/pytorch-chatbot) tutorial with Flask and JavaScript.
+This project is a **modified version** of the chatbot deployment tutorial from [python-engineer/pytorch-chatbot](https://github.com/python-engineer/pytorch-chatbot), deployed using Flask and JavaScript.  
+The frontend code is adapted from [hitchcliff/front-end-chatjs](https://github.com/hitchcliff/front-end-chatjs).
 
-This gives 2 deployment options:
-- Deploy within Flask app with jinja2 template
-- Serve only the Flask prediction API. The used html and javascript files can be included in any Frontend application (with only a slight modification) and can run completely separate from the Flask App then.
+This project provides **two deployment options**:
+1. Deploy within a Flask app using Jinja2 templates.
+2. Serve only the Flask prediction API. The HTML and JavaScript files can be included in any frontend application (with minimal modifications) and run completely separate from the Flask app.
 
-## Initial Setup:
-This repo currently contains the starter files.
+## Modifications Made
 
-Clone repo and create a virtual environment
-```
-$ git clone https://github.com/python-engineer/chatbot-deployment.git
-$ cd chatbot-deployment
+- Modified `intents.json` with new intents and responses
+- Updated frontend code for better integration with the Flask backend
+- Fixed minor bugs and improved project structure
+
+## Initial Setup
+
+Clone the repository and create a virtual environment:
+
+```bash
+$ git clone https://github.com/your-username/your-repo.git
+$ cd your-repo
 $ python3 -m venv venv
 $ . venv/bin/activate
 ```
+
 Install dependencies
-```
+```bash
 $ (venv) pip install Flask torch torchvision nltk
 ```
-Install nltk package
-```
+
+Install NLTK packages
+```bash
 $ (venv) python
 >>> import nltk
 >>> nltk.download('punkt')
 ```
-Modify `intents.json` with different intents and responses for your Chatbot
 
-Run
-```
+Modify `intents.json` to customize your chatbot.
+
+Train the model:
+```bash
 $ (venv) python train.py
 ```
-This will dump data.pth file. And then run
-the following command to test it in the console.
-```
+
+Test the chatbot in the console:
+```bash
 $ (venv) python chat.py
 ```
 
-Now for deployment follow my tutorial to implement `app.py` and `app.js`.
 
-## Watch the Tutorial
-[![Alt text](https://img.youtube.com/vi/a37BL0stIuM/hqdefault.jpg)](https://youtu.be/a37BL0stIuM)  
-[https://youtu.be/a37BL0stIuM](https://youtu.be/a37BL0stIuM)
+## Credits
 
-## Note
-In the video we implement the first approach using jinja2 templates within our Flask app. Only slight modifications are needed to run the frontend separately. I put the final frontend code for a standalone frontend application in the [standalone-frontend](/standalone-frontend) folder.
+Original chatbot tutorial: python-engineer/pytorch-chatbot
+Frontend code: hitchcliff/front-end-chatjs
+This modified project is licensed under the MIT License.
 
-## Credits:
-This repo was used for the frontend code:
-https://github.com/hitchcliff/front-end-chatjs
+## License
+
+This project is based on python-engineer/chatbot
+ and [hitchcliff/front-end-chatjs], both MIT licensed.
+My modifications are also licensed under the MIT License.
+
+
+
